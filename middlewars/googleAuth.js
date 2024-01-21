@@ -7,7 +7,8 @@ const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
 const googleParams = {
   clientID: GOOGLE_CLIENT_ID,
   clientSecret: GOOGLE_CLIENT_SECRET,
-  callbackURL: 'http://localhost:3001/api/users/google/callback',
+  callbackURL:
+    'https://phonebook-backend-5bos.onrender.com/api/users/google/callback',
   passReqtoCallback: true,
 };
 
