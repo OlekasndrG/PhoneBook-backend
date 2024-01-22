@@ -31,8 +31,9 @@ const googleCallback = async (
       email,
       password,
       name: displayName,
-      verificationToken: '',
+      verificationToken: 'noNeed',
     });
+    console.log(newUser);
     done(null, newUser);
   } catch (error) {
     done(error, false);
