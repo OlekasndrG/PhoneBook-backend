@@ -27,7 +27,12 @@ const googleCallback = async (
       return done(null, user); // req.user=user
     }
     const password = await bcrypt.hash(nanoid(), 10);
-    const newUser = await User.create({ email, password, name: displayName });
+    const newUser = await User.create({
+      email,
+      password,
+      name: displayName,
+      verificationToken: '',
+    });
     done(null, newUser);
   } catch (error) {
     done(error, false);

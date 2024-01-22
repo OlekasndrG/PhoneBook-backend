@@ -10,7 +10,7 @@ const googleAuth = async (req, res) => {
   await User.findByIdAndUpdate(id, {
     token,
     verify: true,
-    verificationToken: '',
+    
   });
   res.redirect(
     `${FRONTEND_URL}login?token=${token}&email=${email}&email=${subscription}&avatarURL=${avatarURL}&name=${name}`
