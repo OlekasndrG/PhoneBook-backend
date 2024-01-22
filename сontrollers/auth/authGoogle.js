@@ -7,7 +7,11 @@ const googleAuth = async (req, res) => {
   const token = jwt.sign(payload, SECRET_KEY, {
     expiresIn: '6d',
   });
-  await User.findByIdAndUpdate(id, { token, verify: true });
+  await User.findByIdAndUpdate(id, {
+    token,
+    verify: true,
+    verificationToken: '',
+  });
   res.redirect(
     `${FRONTEND_URL}login?token=${token}&email=${email}&email=${subscription}&avatarURL=${avatarURL}&name=${name}`
   );
